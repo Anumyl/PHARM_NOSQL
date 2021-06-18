@@ -1,0 +1,62 @@
+<head>
+<style>
+.hel {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    font-size: 15px;
+    margin: 2px 0;
+    border: none;
+    background-color: aliceblue;
+}
+
+</style>
+</head>
+<h3>{{viewTitle}}</h3>
+<form action="/pharm" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{pharm._id}}">
+    <div class="form-group">
+        <label>Pharmacy Name</label>
+        <input type="text" class="form-control hel" name="pname" placeholder="Pharmacy Name" value="{{pharm.pname}}">
+        <div class="text-danger">
+            {{pharm.pnameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Medicine Name</label>
+        <input type="text" class="form-control hel" name="mname" placeholder="Medicine Name" value="{{pharm.mname}}">
+        <div class="text-danger">
+            {{pharm.mnameError}}</div>
+    </div>
+    <div class="form-row">
+	    <div class="form-group col-md-6">
+            <label>Stock</label>
+            <input type="number" min="0" title="Enter a valid stock" class="form-control hel" name="stock" placeholder="Stock" value="{{pharm.stock}}">
+            <div class="text-danger">
+            {{pharm.snameError}}</div>
+        </div>
+	    <div class="form-group col-md-6">
+            <label>Cost/medicine</label>
+            <input type="number" min="0" title="Enter a valid cost" class="form-control hel" name="cost" placeholder="Cost/medicine" value="{{pharm.cost}}">
+            <div class="text-danger">
+            {{pharm.cnameError}}</div>
+        </div>
+    </div>
+
+	<div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Mobile</label>
+            <input type="text" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid phone number" class="form-control hel" name="mobile" placeholder="Mobile" value="{{pharm.mobile}}">
+            <div class="text-danger">
+            {{pharm.monameError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>City</label>
+            <input type="text" class="form-control hel" name="city" placeholder="City" value="{{pharm.city}}">
+            <div class="text-danger">
+            {{pharm.cinameError}}</div>
+        </div>
+	</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/pharm/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
